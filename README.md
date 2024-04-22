@@ -59,8 +59,3 @@ The project plans to:
 - Scikit-learn (potential for evaluation metrics)
 - (List any other libraries used in your project)
 
-## Contributions
-Contributions are welcome! Feel free to open an issue or submit a pull request.
-
-## License
-This project is licensed under the MIT License. See the LICENSE file for details.
