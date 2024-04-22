@@ -19,9 +19,45 @@ This repository contains code and data for analyzing lymphography data using Bay
 2. Install the necessary dependencies (e.g., Python, Jupyter Notebook).
 3. Open `BayesianNetwork.ipynb` to run the analysis.
 
-## Usage
-- Use the Bayesian network to predict lymphography outcomes based on observed features.
-- Experiment with different network structures and priors to improve accuracy.
+## Methodology
+
+### Data Preprocessing
+The code performs the following data preprocessing steps (details in the provided notebooks):
+- Handling missing values
+- Verifying data types
+- Generating correlation plots to explore feature relationships
+- Reducing the original four classes to two binary classes:
+  - Class 0: Metastases
+  - Class 1: Malign Lymph
+- Converting remaining classes to binary (0 & 1)
+
+### Feature Selection
+The project employs the Chi-squared test (Chi2) to identify the most relevant features for classification.
+
+### Model Building
+1. Bayesian Network
+   - Library: pgmpy
+   - Estimators: Maximum Likelihood and Bayesian estimators are compared for model construction.
+   - Structure Learning: The Hill Climbing Algorithm is used to estimate Conditional Probability Distributions (CPDs).
+   - Model Selection: A balance is sought between model complexity and classification accuracy.
+   
+2. Artificial Neural Network (ANN)
+   - Library: Keras
+   - Activation Functions: Various activation functions are explored (relu, sigmoid, softmax, tanh) to find the most suitable option for the network.
+   - Optimizers: Experiments are conducted with SGD and other optimizers to optimize learning.
+   - Hyperparameter Tuning: Batch size and epochs are tuned to achieve optimal performance.
+
+### Evaluation & Further Exploration
+The project plans to:
+- Evaluate both models using metrics like accuracy, precision, recall, etc.
+- Investigate techniques for model interpretability, especially for the ANN.
+- Consider potential improvements and further analysis.
+
+## Dependencies
+- pgmpy (for Bayesian Network)
+- Keras (for ANN)
+- Scikit-learn (potential for evaluation metrics)
+- (List any other libraries used in your project)
 
 ## Contributions
 Contributions are welcome! Feel free to open an issue or submit a pull request.
